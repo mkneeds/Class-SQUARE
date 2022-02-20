@@ -5,61 +5,6 @@
 #include <fstream>
 #include <Windows.h>
 using namespace std;
-class Bot {
-private: string time, salary;
-protected: string Name, version, sphera;
-		 string sphera_obsh = "Работать";
-		 string sphera_calc = "Спать";
-public:
-	Bot() {
-		cout << "Эй, Создатель дай мне имя :" << endl;
-		cin >> Name;
-		cout << "А теперь, Создатель,какая я версия? :" << endl;
-		cin >> version;
-		cout << "Оу,а какая у меня сфера деятельности?:" << endl;
-		cout << "Выбери пожалуйста из моего списка:" << endl;
-		cout << "1.Отправить на плантацию" << endl;
-		cout << "2.Отдых" << endl;
-		int sphera;
-		cin >> sphera;
-		switch (sphera) {
-		case 1: this->sphera = sphera_obsh; break;
-		case 2: this->sphera = sphera_calc; break;
-		default: cout << "Упсс...А у меня такого нет"; break;
-		}
-	}
-	Bot(string Name, string version) {
-		this->Name = Name;
-		this->version = version;
-		cout << "Оу,а какая у меня сфера деятельности?:" << endl;
-		cout << "Выбери пожалуйста из моего списка:" << endl;
-		cout << "1.Отправить на плантацию" << endl;
-		cout << "2.Отдых" << endl;
-		int sphera;
-		cin >> sphera;
-		switch (sphera) {
-		case 1: this->sphera = sphera_obsh; break;
-		case 2: this->sphera = sphera_calc; break;
-		default: cout << "Упсс...А у меня такого нет"; break;
-		}
-
-	}
-	~Bot() {
-		cout << "Создатель....За что????...(Умер)" << endl;
-	}
-	void privetstvie();
-	void work();
-	void file();
-	
-};
-void Bot::privetstvie() {
-	cout << "Привет,меня зовут..." << Name << endl;
-	cout << "Моя версия..." << version << endl;
-	cout << "Я умею:" << sphera<<endl;
-}
-void Bot::work() {
-	cout << "Желаете отправить меня на работу?" << endl;
-}
 class Square {
 protected: double storona;
 double S=0, P=0, diag=0,vRad=0,oRad=0;
@@ -130,17 +75,16 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	setlocale(0, "rus");
-	//Square *a=new Square();
-	//a->printStorona();
-	//a->square();
-	//a->perimeter();
-	//a->diagonal();
-	//a->vRadius();
-	//a->oRadius();
-	//a->wfile();
-	//a->~Square();
-	Bot a;
-	a.privetstvie();
+	Square *a=new Square();
+	a->printStorona();
+	a->square();
+	a->perimeter();
+	a->diagonal();
+	a->vRadius();
+	a->oRadius();
+	a->wfile();
+	a->~Square();
+	
 	
 
 }
